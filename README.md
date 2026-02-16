@@ -2,7 +2,7 @@
 
 **Crosscheck OpenClaw console logs with chat history to troubleshoot issues intelligently.**
 
-FACEPALM analyzes OpenClaw console logs (`gateway.log`) and chat history from the last 5 minutes, then uses Codex 5.3 to diagnose and troubleshoot issues. It's automatically invoked by IntentRouter when troubleshooting loops are detected.
+FACEPALM analyzes OpenClaw console logs (`gateway.log`) and chat history from the last 5 minutes, then uses Codex 5.3 to diagnose and troubleshoot issues. Use it as a standalone troubleshooting tool or integrate it with other skills as needed.
 
 ## What it does
 
@@ -14,14 +14,9 @@ When invoked (automatically by IntentRouter or manually), FACEPALM:
 4. Uses Codex 5.3 (`openrouter/openai/gpt-5.3-codex`) via OpenClaw CLI for intelligent troubleshooting
 5. Returns actionable diagnosis with root cause analysis and recommended fixes
 
-## Automatic invocation
+## Standalone troubleshooting tool
 
-FACEPALM is **automatically invoked by IntentRouter** (`friday-router` skill) when a troubleshooting loop is detected:
-
-- **Repeated errors:** Same error pattern appears 3+ times in `gateway.log`
-- **Repeated tasks:** Similar troubleshooting tasks attempted multiple times
-
-When IntentRouter detects a loop, it automatically runs FACEPALM and returns the diagnosis instead of normal routing.
+FACEPALM is a **standalone troubleshooting skill** that can be invoked manually or integrated with other skills. It's designed to be used independently or called by other automation tools when troubleshooting is needed.
 
 ## Manual usage
 
@@ -55,23 +50,18 @@ python3 ~/.openclaw/workspace/skills/FACEPALM/scripts/facepalm.py --minutes 5
 - **OpenRouter API key** configured (for Codex 5.3 access)
 - **`openclaw` CLI** on PATH (for invoking Codex via `openclaw agent`)
 
-## Integration with IntentRouter
+## Integration with other skills
 
-FACEPALM integrates seamlessly with IntentRouter (`friday-router`):
+FACEPALM can be integrated with other skills or automation tools. For example, you could:
 
-1. IntentRouter detects troubleshooting loops during task routing
-2. When a loop is detected, IntentRouter automatically invokes FACEPALM
-3. FACEPALM analyzes logs and chat history, then invokes Codex 5.3
-4. The diagnosis is returned to the user instead of normal routing
+- Call FACEPALM from a monitoring script when errors are detected
+- Integrate with workflow automation tools
+- Use it as part of a larger troubleshooting pipeline
 
-**Example flow:**
-```
-User: "fix this error"
-→ IntentRouter detects repeated error in logs
-→ IntentRouter invokes FACEPALM
-→ FACEPALM analyzes logs + chat history
-→ Codex 5.3 provides diagnosis
-→ User receives intelligent troubleshooting analysis
+**Example integration:**
+```bash
+# From another script or skill
+python3 ~/.openclaw/workspace/skills/FACEPALM/scripts/facepalm.py --minutes 5 --json
 ```
 
 ## How it works

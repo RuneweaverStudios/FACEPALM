@@ -1,7 +1,7 @@
 ---
 name: FACEPALM
 displayName: FACEPALM
-description: Crosscheck OpenClaw console logs with chat history (last 5 mins) and use Codex 5.3 to troubleshoot issues. Automatically invoked by IntentRouter when troubleshooting loops are detected.
+description: Crosscheck OpenClaw console logs with chat history (last 5 mins) and use Codex 5.3 to troubleshoot issues. Standalone troubleshooting tool that can be invoked manually or integrated with other skills.
 version: 1.0.0
 ---
 
