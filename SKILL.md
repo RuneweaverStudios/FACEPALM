@@ -34,3 +34,10 @@ python3 workspace/skills/FACEPALM/scripts/facepalm.py [--minutes N] [--json]
 
 - OpenClaw with `gateway.log` and session transcripts
 - OpenRouter API key configured (for Codex 5.3 access)
+- `openclaw` CLI on PATH (for invoking Codex via `openclaw agent`)
+
+## Links
+
+- **GitHub:** https://github.com/RuneweaverStudios/FACEPALM
+- **ClawHub:** https://clawhub.ai/skills/FACEPALM (when published)
+- **Related:** [IntentRouter (friday-router)](https://clawhub.ai/skills/friday-router) - Automatically invokes FACEPALM
