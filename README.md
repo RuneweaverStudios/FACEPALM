@@ -6,7 +6,9 @@ FACEPALM analyzes OpenClaw console logs (`gateway.log`) and chat history from th
 
 ## What it does
 
-When invoked (automatically by IntentRouter or manually), FACEPALM:
+**ClawHub:** Update `clawhub install`/`clawhub publish` and all `clawhub.ai/...` links in this file when the new ClawHub instance is live.
+
+When invoked (automatically by Agent Swarm or manually), FACEPALM:
 
 1. Reads `gateway.log` from the last 5 minutes (configurable)
 2. Extracts chat history from active session transcripts
@@ -150,7 +152,7 @@ clawhub install FACEPALM
 
 ## Related skills
 
-- **[IntentRouter (friday-router)](https://clawhub.ai/skills/friday-router)** - Automatically invokes FACEPALM when troubleshooting loops detected
+- **[Agent Swarm](https://clawhub.ai/skills/agent-swarm)** - Automatically invokes FACEPALM when troubleshooting loops detected
 - **[gateway-guard](https://clawhub.ai/skills/gateway-guard)** - Keeps gateway auth stable
 - **[what-just-happened](https://clawhub.ai/skills/what-just-happened)** - Summarizes gateway restarts
 

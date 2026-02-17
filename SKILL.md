@@ -9,11 +9,11 @@ version: 1.0.0
 
 **Crosscheck console logs with chat history to troubleshoot issues intelligently.**
 
-FACEPALM analyzes OpenClaw console logs (`gateway.log`) and chat history from the last 5 minutes, then uses Codex 5.3 to diagnose and troubleshoot issues. It's automatically invoked by IntentRouter when troubleshooting loops are detected.
+FACEPALM analyzes OpenClaw console logs (`gateway.log`) and chat history from the last 5 minutes, then uses Codex 5.3 to diagnose and troubleshoot issues. It's automatically invoked by Agent Swarm when troubleshooting loops are detected.
 
 ## When to use
 
-- **Automatic:** Invoked by IntentRouter when a troubleshooting loop is detected (repeated errors, failed attempts)
+- **Automatic:** Invoked by Agent Swarm when a troubleshooting loop is detected (repeated errors, failed attempts)
 - **Manual:** Run directly when you need intelligent troubleshooting analysis
 
 ## Features
@@ -39,5 +39,5 @@ python3 workspace/skills/FACEPALM/scripts/facepalm.py [--minutes N] [--json]
 ## Links
 
 - **GitHub:** https://github.com/RuneweaverStudios/FACEPALM
-- **ClawHub:** https://clawhub.ai/skills/FACEPALM (when published)
-- **Related:** [IntentRouter (friday-router)](https://clawhub.ai/skills/friday-router) - Automatically invokes FACEPALM
+- **ClawHub:** Update base URL when new instance is live. Current: https://clawhub.ai/skills/FACEPALM (when published)
+- **Related:** [Agent Swarm](https://clawhub.ai/skills/agent-swarm) - Automatically invokes FACEPALM
