@@ -19,7 +19,7 @@ OPENCLAW_HOME = Path(os.environ.get("OPENCLAW_HOME", str(Path.home() / ".opencla
 LOGS_DIR = OPENCLAW_HOME / "logs"
 GATEWAY_LOG = LOGS_DIR / "gateway.log"
 SESSIONS_PATH = OPENCLAW_HOME / "agents" / "main" / "sessions"
-SESSIONS_JSON = SESSIONS_PATH / "sessions.json"
+SESSIONS_JSON = Path(os.environ.get("FACEPALM_SESSIONS_JSON", str(SESSIONS_PATH / "sessions.json")))
 
 # Default model: Codex 5.3
 DEFAULT_MODEL = "openrouter/openai/gpt-5.3-codex"
