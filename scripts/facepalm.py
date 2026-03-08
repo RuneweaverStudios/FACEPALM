@@ -114,7 +114,8 @@ def get_recent_chat_history(minutes: int) -> list[dict]:
                             try:
                                 ts_dt = datetime.fromisoformat(timestamp.replace("Z", "+00:00"))
                                 ts_ms = int(ts_dt.timestamp() * 1000)
-                            except:
+                            except Exception as e:
+                                print(f"FACEPALM: error parsing timestamp '{timestamp}': {e}", file=sys.stderr)
                                 continue
                         else:
                             ts_ms = int(timestamp) if timestamp > 1000000000000 else int(timestamp * 1000)
