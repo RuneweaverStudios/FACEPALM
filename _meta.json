@@ -1,16 +1,29 @@
 {
   "schema": "openclaw.skill.v1",
   "name": "facepalm",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "displayName": "FACEPALM",
   "slogan": "Crosscheck console logs with chat history to troubleshoot issues intelligently.",
-  "description": "FACEPALM analyzes OpenClaw console logs and chat history from the last 5 minutes, then uses Codex 5.3 to diagnose and troubleshoot issues. Can be invoked when troubleshooting is needed (e.g. after Agent Swarm or manual trigger).",
+  "description": "FACEPALM analyzes OpenClaw console logs and chat history from a configurable time window, then uses an LLM (default: GPT-4o via OpenRouter) to diagnose and troubleshoot issues. All parameters are config-driven.",
   "author": "Austin",
+  "main": "scripts/facepalm.py",
   "tags": [
     "troubleshooting",
     "debugging",
     "diagnostics",
-    "codex"
+    "log-analysis",
+    "openclaw",
+    "automation"
   ],
-  "platform": "openclaw"
+  "platform": "openclaw",
+  "requires": {
+    "env": [],
+    "platform": {
+      "openclaw": {
+        "config": {
+          "openrouter_api_key": "Required: OpenRouter API key must be configured in OpenClaw platform settings"
+        }
+      }
+    }
+  }
 }

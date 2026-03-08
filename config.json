@@ -1,0 +1,13 @@
+{
+  "time_window_minutes": 5,
+  "model": "openrouter/openai/gpt-4o",
+  "log_paths": {
+    "gateway_log": "${OPENCLAW_HOME}/logs/gateway.log",
+    "sessions_json": "${OPENCLAW_HOME}/agents/main/sessions/sessions.json",
+    "sessions_dir": "${OPENCLAW_HOME}/agents/main/sessions"
+  },
+  "max_log_lines": 200,
+  "max_chat_messages": 100,
+  "cli_timeout_seconds": 130,
+  "agent_timeout_ms": 120000
+}
